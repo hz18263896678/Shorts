@@ -54,9 +54,6 @@
   }
 </script>
 <style scoped>
-  * {
-    font-family: '微软雅黑';
-  }
   .tab{
     margin-top: 30px;
   }
