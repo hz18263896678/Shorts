@@ -4,25 +4,28 @@ import Vue from 'vue'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
-import Home from './components/HelloFromVux'
+import store from './vuex/store'
+import Login from './components/login'
 
 Vue.use(VueRouter)
 
 const routes = [{
   path: '/',
-  component: Home
+  component: Login
 }]
 
 const router = new VueRouter({
+  mode: 'history',
+  base: __dirname,
   routes
 })
 
 FastClick.attach(document.body)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app-box')
