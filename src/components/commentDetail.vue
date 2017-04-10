@@ -62,7 +62,7 @@
      }
     },
     methods:{
-      showReport(event){
+      showReport(){
           if(this.showreport==true){
               this.showreport=false;
           }else{
