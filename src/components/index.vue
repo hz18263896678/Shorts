@@ -166,7 +166,7 @@
       </ul>
     </section>
     <section class="content">
-      <div>
+      <div class="stone">
         <img src="https://o5omsejde.qnssl.com/demo/test1.jpg" class="miniImg" alt="">
         <ul class="imgDesc">
           <li>名称：</li>
@@ -176,6 +176,7 @@
           <li>描述：</li>
         </ul>
       </div>
+      <div class="line"></div>
     </section>
   </section>
 </template>
@@ -238,15 +239,30 @@
   .imgDesc{
     float: left;
     list-style-type: none;
+    margin-left: 10px;
   }
   .miniImg{
     width:150px;
     height:130px;
+    margin-left: 10px;
     float: left;
   }
   .content{
     margin-top: 20px;
     float: left;
     width: 100%;
+  }
+  .stone{
+    float: left;
+    width:100%;
+    height:auto;
+  }
+  .line{
+    width: 95%;
+    float: left;
+    height:1px;
+    background: black;
+    text-align: center;
+    margin: 8px;
   }
 </style>
