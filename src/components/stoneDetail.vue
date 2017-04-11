@@ -1,21 +1,46 @@
 <template>
   <section>
     <header>
-      <span>全部评论(20124)</span>
+      <swiper :list="list" auto class="swiper" dots-class="custom-bottom"
+              dots-position="center"></swiper>
     </header>
-    <section @click.stop="showReport">
+    <section>
+      <ul class="imgDesc">
+        <li>名称：</li>
+        <li>规格：</li>
+        <li>种类：</li>
+        <li>区域：</li>
+        <li>描述：</li>
+        <li>获奖情况：</li>
+      </ul>
+      <div class="funcBar">
+        <div class="left">
+          <div style="margin-left:10px;float: left ">
+            <img src="../assets/star.png">
+          </div>
+          <div style="margin-left:10px;float: left ">
+            <img src="../assets/good.png">
+            <div class="fc_num">1247</div>
+          </div>
+          <div style="margin-left:10px;float: left ">
+            <img src="../assets/nogood.jpg">
+            <div class="fc_num">5147</div>
+          </div>
+        </div>
+        <div class="right">
+          <router-link to=""><span>石馆</span></router-link>
+        </div>
+      </div>
+      <div class="titleBar">
+        热门评论(20124)
+      </div>
       <div class="comment">
         <div class="c_row">
           <div class="c_row_left">
             <img class="p_head_image" src="../assets/head.png">
 
             <div>张三</div>
-            <div class="comm_detail">
-              <img src="../assets/cycle.png" @click.stop="showReport">
-              <div class="hide_report" :class="showreport==true?showr:hider">
-                  举报
-              </div>
-            </div>
+
           </div>
         </div>
         <div class="c_row time">
@@ -38,58 +63,93 @@
         </div>
       </div>
     </section>
-    <footer>
-      <div class="foot_c">
-        <img src="../assets/comment.png" alt="">
-        <span>10评论</span>
-      </div>
-      <div class="foot_c">
-        <img src="../assets/good.png" alt="">
-        <span>8点赞</span>
-      </div>
-    </footer>
   </section>
 </template>
 <script>
-  export default {
+  import {Swiper, GroupTitle, SwiperItem, XButton, Divider} from 'vux'
+
+  export default  {
     components: {
+      Swiper,
+      SwiperItem,
+      GroupTitle,
+      XButton,
+      Divider
     },
     data(){
       return {
-        showreport:false,
-        hider:'hider',
-        showr:'showr',
-     }
-    },
-    methods:{
-      showReport(){
-          if(this.showreport==true){
-              this.showreport=false;
-          }else{
-            this.showreport=true;
-          }
+        list: ['http://placeholder.qiniudn.com/800x300/FF3B3B/ffffff',
+          'http://placeholder.qiniudn.com/800x300/FFEF7D/ffffff',
+          'http://placeholder.qiniudn.com/800x300/8AEEB1/ffffff'],
       }
-    }
+    },
+    methods: {}
+
   }
 </script>
 <style scoped>
-  header {
-    color: rgb(204, 102, 0);
-    left: 490px;
-    top: 117px;
+  .swiper {
+    width: 82%;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .imgDesc {
+    float: right;
+    width: 90%;
+    list-style-type: none;
+  }
+
+  .funcBar {
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .funcBar .left img {
+    width: 25px;
+    height: 30px;
+  }
+
+  .funcBar .left {
+    float: left;
+    width: 80%;
+    height: 30px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #d2c0c0;
+  }
+
+  .funcBar .right span {
+    color: #3fd6bb;
+  }
+
+  .funcBar .right {
+    float: left;
+    width: 19%;
+    height: 30px;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    text-align: center;
+    border-color: #d2c0c0;
+  }
+
+  .fc_num {
+    float: left;
+  }
+
+  .titleBar {
     width: 100%;
     height: 30px;
     color: rgb(204, 102, 0);
-    margin-top: 20px;
     text-align: left;
     border-width: 0px;
     background: #fbfbfb;
+    float: left;
+    margin: 10px 0;
+    padding: 0 12px;
   }
-
-  header span {
-    margin: 12px;
-  }
-
   .comment {
     width: 100%;
     height: auto;
@@ -170,55 +230,7 @@
     float: left;
     width: 94%;
   }
-
   .func {
     margin: 5px 0;
-  }
-
-  footer {
-    float: left;
-    width: 100%;
-    padding-left: 4%;
-  }
-
-  .foot_c {
-    float: left;
-    width: 170px;
-    height: 30px;
-    color: rgba(204, 204, 204, 0.709804);
-    border: 1px solid;
-  }
-
-  .foot_c span {
-    position: relative;
-    top: 0px;
-    left: 36px;
-  }
-
-  .foot_c img {
-    position: relative;
-    top: 5px;
-    left: 40px;
-    width: 20px;
-    height: 20px;
-    border-width: 0px;
-  }
-  .hide_report{
-    display: none;
-    width: 80px;
-    height: 30px;
-    line-height: 30px;
-    position: absolute;
-    text-align: center;
-    border: 1px solid #e6dddd;
-    background: #dedcdc;
-    color: #fff;
-    right: 10px;
-  }
-  .showr{
-    display: block;
-  }
-  .hider{
-    display: none;
   }
 </style>

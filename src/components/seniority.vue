@@ -1,7 +1,11 @@
 <template>
   <section>
       <header>
-        <span>条件：</span><span class="condition">热门奇石</span><span class="condition">新石排行</span>
+        <span>条件：</span>
+        <span class="condition">热门奇石</span>
+        <span class="condition">新石排行</span>
+        <span class="condition">点赞最多</span>
+        <span class="condition">收藏最多</span>
       </header>
     <div class="line"></div>
     <section class="content">
